@@ -10,32 +10,59 @@
 
 <body>
     <?php
-    echo "<h1>Hello World !!</h1>";
+    echo "<pre>";
 
-    $nomPersonne = "Greg";
+    // déclarer un tableau
+    $tableau = ["Bonjour", 15, true, 58.15, "brouette", 45, false];
 
-    // L'injection de variable fonctionne UNIQUEMENT avec les " ", pas avec les ' ' .
-    echo "<p>Bonjour $nomPersonne, comment ça va?</p>";
+    // ajouter des valeurs
+    // a la fin (push)
+    // array_push($tableau, "Fin")    est égale à    $tableau[] = "Fin"
+    $tableau[] = "Fin";
 
-    // Les types de variables:
-    // Entiers (entier / enteger)
-    $nombre = 85;
+    // Ajouter des valeurs au début (unshift)
+    array_unshift($tableau, "Début");
 
-    // Décimaux (float)
-    $nombre2 = 85.2;
+    // Supprimer des valeurs
+    // A la fin(pop)
+    array_pop($tableau);
 
-    // Chaine de caractères (string)
-    $chaine = "ceci est un texte";
+    // pour récupérer la valeur supprimer par array_pop
+    $valeur = array_pop($tableau);
 
-    // booléen (boolean)
-    $booleen = true; // false
+    // Supprimer au début (shift)
+    $valeur = array_shift($tableau);
 
-    // Connaitre le contenu et le type d'une varibale
-    var_dump($nombre); 
-    var_dump($nombre2);
-    var_dump($chaine);
-    var_dump($booleen);
+    // diviser le tableau en plusieuyrs partie de 2 valeurs
+    $tableau3 = array_chunk($tableau, 2, true);
+
+    // melanger un tableau
+    shuffle($tableau);
     
+    $tableauMulti = [
+        "nom" => "Girault",
+        "prenom" => "Greg",
+        "age" => "35"
+    ];
+
+    $tableauMultiDim = [
+        0 => [
+        "nom" => "Gallas",
+        "prenom" => "Sandra",
+        "age" => "27"
+    ],
+        1 => [
+        "nom" => "Girault",
+        "prenom" => "Greg",
+        "age" => "35"
+    ]
+];
+
+
+
+    var_dump($tableauMultiDim[0]["nom"]);
+    // echo $valeur;
+    echo "</pre>";
     ?>
 </body>
 
